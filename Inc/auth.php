@@ -23,9 +23,9 @@ logout();
 				$_SESSION['cash'] = $user['cash'];
 				$_SESSION['money'] = $user['money'];
 				$_SESSION['lvl'] = $user['lvl'];
-				echo json_encode([2]);
+				echo 222;
 			}else{
-				echo json_encode([3]);
+				echo "wrong username or password";
 			}
 		}
 	}

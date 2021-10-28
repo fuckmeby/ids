@@ -20,9 +20,9 @@
                 $_SESSION['lvl'] = 0;
                 $_SESSION['money'] = 0;
                 $_SESSION['cash'] = 0;
-                echo json_encode([1]);
+                echo "registration successfully";
             }else{
-                    echo json_encode([0]);
+                    echo "e-mail is busy";
             }
         }   
     }
