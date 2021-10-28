@@ -20121,12 +20121,12 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.AJAX,
 	cr.plugins_.Arr,
 	cr.plugins_.Button,
+	cr.plugins_.rex_bbcodeText,
+	cr.plugins_.Mouse,
 	cr.plugins_.JSON,
 	cr.plugins_.JsontoC2Array,
-	cr.plugins_.Mouse,
-	cr.plugins_.rex_bbcodeText,
-	cr.plugins_.Text,
 	cr.plugins_.TextBox,
+	cr.plugins_.Text,
 	cr.plugins_.Button.prototype.cnds.OnClicked,
 	cr.plugins_.Button.prototype.cnds.PickByUID,
 	cr.plugins_.TextBox.prototype.cnds.PickByUID,
@@ -20141,11 +20141,16 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.AJAX.prototype.cnds.OnAnyError,
 	cr.plugins_.AJAX.prototype.cnds.OnComplete,
 	cr.plugins_.AJAX.prototype.exps.LastData,
+	cr.system_object.prototype.acts.GoToLayout,
 	cr.plugins_.TextBox.prototype.acts.SetText,
 	cr.plugins_.Arr.prototype.acts.JSONLoad,
 	cr.plugins_.JsontoC2Array.prototype.exps.ConvertJSON,
 	cr.plugins_.Arr.prototype.exps.AsJSON,
+	cr.plugins_.Arr.prototype.cnds.ArrForEach,
+	cr.plugins_.Arr.prototype.exps.CurY,
+	cr.plugins_.Arr.prototype.exps.At,
+	cr.system_object.prototype.exps.newline,
 	cr.system_object.prototype.cnds.IsGroupActive,
-	cr.system_object.prototype.acts.GoToLayout
+	cr.system_object.prototype.cnds.OnLayoutStart
 ];};
 
