@@ -20691,9 +20691,6 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.Arr.prototype.cnds.ArrForEach,
 	cr.plugins_.Arr.prototype.exps.At,
 	cr.system_object.prototype.exps.newline,
-	cr.plugins_.Dictionary.prototype.exps.Get,
-	cr.system_object.prototype.exps.replace,
-	cr.system_object.prototype.acts.Wait,
-	cr.plugins_.Dictionary.prototype.exps.AsJSON
+	cr.plugins_.Dictionary.prototype.exps.Get
 ];};
 
