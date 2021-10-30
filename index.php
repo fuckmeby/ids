@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<title>New project</title>
+	<title>IDS</title>
 	
 	<!-- Standardised web app manifest -->
 	<link rel="manifest" href="appmanifest.json" />
@@ -64,7 +64,7 @@
 	
 		<!-- The canvas the project will render to.  If you change its ID, don't forget to change the
 		ID the runtime looks for in the jQuery events above (ready() and cr_sizeCanvas()). -->
-		<canvas id="c2canvas" width="854" height="480">
+		<canvas id="c2canvas" width="800" height="500">
 			<!-- This text is displayed if the visitor's browser does not support HTML5.
 			You can change it, but it is a good idea to link to a description of a browser
 			and provide some links to download some popular HTML5-compatible browsers. -->
@@ -82,6 +82,10 @@
 	<!-- Construct 2 exported games require jQuery. -->
 	<script src="jquery-3.4.1.min.js"></script>
 
+	<script src="c2mp-net.js"></script>
+	<script src="c2mp-peer.js"></script>
+	<script src="c2mp.js"></script>
+	<script src="waker.js"></script>
 
 	
     <!-- The runtime script.  You can rename it, but don't forget to rename the reference here as well.
@@ -104,10 +108,10 @@
 				cr_setSuspended(false);
 		};
 		
-		document.addEventListener("visibilitychange", onVisibilityChanged, false);
-		document.addEventListener("mozvisibilitychange", onVisibilityChanged, false);
-		document.addEventListener("webkitvisibilitychange", onVisibilityChanged, false);
-		document.addEventListener("msvisibilitychange", onVisibilityChanged, false);
+		document.addEventListener("visibilitychange", onVisibilityChanged, true);
+		document.addEventListener("mozvisibilitychange", onVisibilityChanged, true);
+		document.addEventListener("webkitvisibilitychange", onVisibilityChanged, true);
+		document.addEventListener("msvisibilitychange", onVisibilityChanged, true);
 		
 		function OnRegisterSWError(e)
 		{
