@@ -44,9 +44,14 @@
 
 	function getProfileInfo($link){
 		if(isset($_POST['profile'])){
-			$query = "SELECT users.kills, users.deaths, users.tournaments, users.flags, users.lvl, users.money, users.cash, users.info, users.skin, weapons.id as weap_id, weapons.name as weapon_name  FROM users LEFT JOIN users_weapons ON users_weapons.user_id=users.id LEFT JOIN weapons ON users_weapons.weapon_id=weapons.id WHERE users.id=$_SESSION[id]";
+			$query = "SELECT users.kills, users.deaths, users.tournaments as tours, users.flags, users.lvl, users.money, users.cash, users.info, users.skin  FROM users WHERE id=$_SESSION[id]";
 			$result = mysqli_query($link, $query) or die(mysqli_error($link));
 			for($data = []; $row = mysqli_fetch_assoc($result); $data[] = $row);
+			$data = call_user_func_array('array_merge',$data);
+			$query1 = "SELECT GROUP_CONCAT(weapons.name SEPARATOR ',') as weapon_name  FROM users LEFT JOIN users_weapons ON users_weapons.user_id=users.id LEFT JOIN weapons ON users_weapons.weapon_id=weapons.id WHERE users.id=$_SESSION[id]";
+			$result = mysqli_query($link, $query1) or die(mysqli_error($link));
+			for($data_weap = []; $row = mysqli_fetch_assoc($result); $data_weap[] = $row);
+			$data['weap_name'] = $data_weap[0]['weapon_name'];
 			echo json_encode($data, JSON_UNESCAPED_UNICODE);
 		}
 	}
@@ -69,4 +74,3 @@
 
 
 ?>
-
